@@ -1,0 +1,18 @@
+<?php
+namespace SYSTEM;
+
+class Security{
+	public function checkLogin($user, $pass){
+		$password = crypt($pass, '$2a$09$'.SALT.'$');
+		$result = $GLOBALS['DB']->query("SELECT COUNT(id) FROM uni1_users WHERE username='".$user."' AND password='".$password."'");
+		foreach($result as $data){
+			if($data['COUNT(id)'] != 1){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
+	}
+}
+?>

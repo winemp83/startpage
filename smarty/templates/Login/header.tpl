@@ -14,7 +14,7 @@
 		<td>Username :</td>
 	</tr>
 	<tr>
-	<form>
+	<form method="post">
 		<td><input type="text" name="user" size="15" max-size="30"></td>
 	</tr>
 	<tr>
@@ -47,9 +47,9 @@
 </div>
 <div id="menue">
 {block "Menue"}
-<span id="menue_button"><a href="http://game.spaceoflegends.de" target="_blank">zum Spiel</a></span><br />
-<span id="menue_button"><a href="http://mantis.spaceoflegends.de" target="_blank">zum Mantis</a></span><br />
-<span id="menue_button"><a href="http://team.spaceoflegends.de" target="_blank">zum Forum</a></span>
+<div id="menue_button"><a href="http://game.spaceoflegends.de" target="_blank">zum Spiel</a></div>
+<div id="menue_button"><a href="http://mantis.spaceoflegends.de" target="_blank">zum Mantis</a></div>
+<div id="menue_button"><a href="http://team.spaceoflegends.de" target="_blank">zum Forum</a></div>
 {/block}
 </div>
 </div>

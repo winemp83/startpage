@@ -29,6 +29,17 @@ text-align: center;
 background: black;
 opacity: 0.75;
 }
+#lefttop{
+position: fixed;
+top: 5px;
+left: 5px;
+width: 180px;
+height: 360px;
+text-align: center;
+background: black;
+opacity: 0.75;
+text-align:left;
+}
 #header{
  position: absolute;
  top: 10px;
@@ -40,6 +51,15 @@ opacity: 0.75;
 #menue{
 position: fixed;
 top: 190px;
+left: 5px;
+width: 180px;
+text-align: center;
+background: black;
+opacity: 0.75;
+}
+#inmenu{
+position: fixed;
+bottom: 25px;
 left: 5px;
 width: 180px;
 text-align: center;
@@ -72,4 +92,5 @@ height: 20px;
 background-image:url("http://www.spaceoflegends.de/img/bkd_bg.png");
 width: 180px;
 height: 20px;
+display: block;
 }
