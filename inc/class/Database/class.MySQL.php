@@ -13,7 +13,7 @@ class MySQL extends \mysqli{
 			trigger_error("MySQL-Connection-Error", E_USER_ERROR);
 			die();
 		}
-		
+		$this->query(mysqli_set_charset("utf8"));
 		$this->query("SET NAMES utf8");
 	}
 	

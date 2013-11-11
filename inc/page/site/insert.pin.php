@@ -1,7 +1,10 @@
 <?php
-
+$walls = new System\ownwall;
+if(isset($_POST['del'])){
+	$walls->delWall($_POST['delID']);
+	$wall = $walls->getWall($_POST['id']);
+}
 if(isset($_POST['text'])){
-	$walls = new System\ownwall;
 	if($walls->setWall($_POST['id'], $_POST['text'])){
 		$wall = $walls->getWall($_POST['id']);
 	}
@@ -9,12 +12,6 @@ if(isset($_POST['text'])){
 		$wall = 'error1';
 	}
 }
-else{
-	$wall = 'error2';
-}
-
-
- 
 
 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/get.info.php';
 

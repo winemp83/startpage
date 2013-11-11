@@ -9,15 +9,17 @@ class ownwall{
 	
 	public function getWall($owner){
 		$this->getOptions($owner);
-		$this->wall = $GLOBALS['DB']->query("SELECT * FROM uni1_wall WHERE owner='".$owner."'");
+		$this->wall = $GLOBALS['DB']->query("SELECT * FROM uni1_wall WHERE owner='".$owner."' ORDER BY id DESC LIMIT 20");
 		$array_user = array();
 		$array_msg = array();
 		$array_time = array();
+		$array_id = array();
 		foreach($this->wall as $data){
 			$result = $GLOBALS['DB']->query("SELECT username FROM uni1_users WHERE id='".$data['poster']."'");
 			foreach($result as $Data){
 				array_push($array_user, $Data['username']);
 			}
+			array_push($array_id, $data['id']);
 			array_push($array_msg, $data['wall']);
 			array_push($array_time, $data['time']);
 		}
@@ -27,6 +29,14 @@ class ownwall{
 			$msg .= '<table width="75%" frame="void">';
 			$msg .= '<tr><td style="text-align:left;width:50%;">';
 			$msg .= $array_user[$i];
+			if($owner == $_SESSION['id']){
+				$msg .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+				$msg .= '<form action="index.php?page=insertPin" method="post">';
+				$msg .= '<input type="hidden" value="'.$array_id[$i].'" name="delID">';
+				$msg .= '<input type="hidden" value="'.$_SESSION['id'].'" name="id">';
+				$msg .= '<input type="submit" value="Löschen" name="del">';
+				$msg .= '</form>';
+			}
 			$msg .= '</td><td style="text-align:right;width:50%;">';
 			if((time()-(60*60*24)) > $array_time[$i]){
 				$msg .= date("d.m.Y", $array_time[$i]);
@@ -41,10 +51,10 @@ class ownwall{
 				}
 			}
 			$msg .= '</td></tr><tr><td colspan="2" style="text-align:center;">';
-			$msg .= $array_msg[$i];
+			$msg .= $GLOBALS['BBCode']->parse($array_msg[$i]);
 			$msg .= '</td></tr></table>';
 			$msg .= '</div>';
-			$text = $GLOBALS['BBCode']->parse($msg);
+			$text = $msg;
 			
 		}
 		return $text;
@@ -119,6 +129,17 @@ class ownwall{
 			$this->friends = $data['is_friends'];
 			$this->allow = $data['is_allow'];
 		}
+	}
+	
+	public function delWall($id){
+		$result = $GLOBALS['DB']->query("SELECT * FROM uni1_wall WHERE id='".$id."'");
+		foreach($result as $data){
+			$owner = $data['owner'];
+		}
+		if($owner == $_SESSION['id']){
+			$GLOBALS['DB']->query("DELETE FROM uni1_wall WHERE id='".$id."'");
+		}
+		
 	}
 }
 ?>

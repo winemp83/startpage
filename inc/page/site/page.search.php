@@ -1,13 +1,11 @@
 <?php
 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/get.info.php';
-require_once PROJECT_DOCUMENT_ROOT.'/inc/search/class.search.php';
+require_once PROJECT_DOCUMENT_ROOT.'/inc/class/search/class.search.php';
 $search = new System\search;
 $users = $search->getAll();
 $msg = "<table width='100%' style='text-align:center;border:silver;' rules='all'>";
-$msg .= "<tr><th width='10%'>User ID</th><th width='30%;'>Username</th><th width='30%;'>zur Pinnwand</th><th width='30%;'>Zu den Erfolgen</th></tr>";
+$msg .= "<tr><th width='40%;'>Username</th><th width='30%;'>zur Pinnwand</th><th width='30%;'>Zu den Erfolgen</th></tr>";
 for($i = 0; $i < count($users); $i++){
-	$msg .= "<tr><td>";
-	$msg .= $users[$i]['id'];
 	$msg .= '</td><td>';
 	$msg .= $users[$i]['user'];
 	$msg .= '</td><td>';

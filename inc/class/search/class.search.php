@@ -7,7 +7,7 @@ class search{
 	private $user = array();
 	
 	public function __construct(){
-		$result = $GLOBALS['DB']->query("SELECT * FROM uni1_users");
+		$result = $GLOBALS['DB']->query("SELECT * FROM uni1_users ORDER BY username ASC ");
 		foreach($result as $data){
 			array_push($this->user_name, $data['username']);
 			array_push($this->user_id, $data['id']);

@@ -2,6 +2,7 @@
 <HTML>
 <HEAD>
 <title>{$title}</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="http://www.spaceoflegends.de/inc/css/default.css">
 <script src="http://www.spaceoflegends.de/inc/js/default.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
@@ -32,6 +33,7 @@
 </div>
 <div id="content">
 {block "Content"}
+{$content}
 {/block}
 </div>
 <div id="inmenu">
