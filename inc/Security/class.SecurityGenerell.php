@@ -14,5 +14,10 @@ class Security{
 			}
 		}
 	}
+	
+	public function checkAdm(){
+		(isset($_SESSION['adm']) && ($_SESSION['adm'] != 0 && $_SESSION['adm'] != 4)) ? $adm = true : $adm = false;
+		return $adm;
+	}
 }
 ?>

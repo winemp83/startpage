@@ -7,7 +7,7 @@ if($_GET['page'] == 'Logout'){
 }
 if(isset($_POST['Login']) && $_POST['Login'] === 'Login'){
 	$security = new SYSTEM\Security;
-	if($security->checkLogin($_POST['user'], $_POST['pass'])){
+	if($GLOBALS['SEC']->checkLogin($_POST['user'], $_POST['pass'])){
 		$_SESSION['login'] = time()+600;
 		$_SESSION['user'] = md5($_POST['user']);
 		$result = $GLOBALS['DB']->query("SELECT * FROM uni1_users WHERE username='".$_POST['user']."'");
@@ -22,7 +22,7 @@ if(isset($_POST['Login']) && $_POST['Login'] === 'Login'){
 	}
 }
 
-if(!isset($_SESSION['login']) || $_SESSION['login'] < time() && !isset($_SESSION['user']) && $_GET['page']!='adm'){
+if(!isset($_SESSION['login']) || $_SESSION['login'] < time() && !isset($_SESSION['user']) && $_GET['page']!='adm' && $_GET['page']!='bote' && $_GET['page']!='archivment'){
 	$_SESSION['login'] = '';
 	session_destroy();
 	if(!isset($_GET['page']) || empty($_GET['page'])){
@@ -40,7 +40,7 @@ if(!isset($_SESSION['login']) || $_SESSION['login'] < time() && !isset($_SESSION
 					break;
 	}
 }
-elseif(isset($_SESSION['adm']) && ($_SESSION['adm'] !=0 || $_SESSION['adm'] != 4)&& $_GET['page'] == 'adm'){
+elseif($GLOBALS['SEC']->checkAdm() && $_GET['page'] == 'adm'){
 	require_once PROJECT_DOCUMENT_ROOT.'/adm.php';
 }
 else{
