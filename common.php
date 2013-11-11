@@ -11,7 +11,7 @@ if(!isset($GLOBALS['SEC'])){
 	$SEC = new System\Security;
 }
 if(!isset($GLOBALS['BBCode'])){
-	$BBCode = new System\bb_parser;
+	$BBCode = new System\BBCode;
 }
 
 require('/usr/local/lib/Smarty/Smarty.class.php');

@@ -1,7 +1,7 @@
 <?php
 namespace SYSTEM\Database;
 
-class MySQL{
+class MySQL extends \mysqli{
 	public $MySQLiObj;
 	public $lastSQLQuery;
 	public $lastSQLStatus;
@@ -19,6 +19,10 @@ class MySQL{
 	
 	public function __destruct(){
 		$this->MySQLiObj->close();
+	}
+	
+	public function escape($text){
+		return $this->MySQLiObj->real_escape_string($text);
 	}
 	
 	public function query($sqlQuery, $resultset = false){

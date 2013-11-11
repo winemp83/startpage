@@ -22,7 +22,7 @@ if(isset($_POST['Login']) && $_POST['Login'] === 'Login'){
 	}
 }
 
-if(!isset($_SESSION['login']) || $_SESSION['login'] < time() && !isset($_SESSION['user']) && $_GET['page']!='adm' && $_GET['page']!='bote' && $_GET['page']!='archivment'){
+if(!isset($_SESSION['login']) || $_SESSION['login'] < time() && !isset($_SESSION['user']) && $_GET['page']!='adm' && $_GET['page']!='bote' && $_GET['page']!='archivment' && $_GET['page'] != 'wall' && $_GET['page']!='search' && $_GET['page']!='insertPin'){
 	$_SESSION['login'] = '';
 	session_destroy();
 	if(!isset($_GET['page']) || empty($_GET['page'])){
