@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['SEC']->checkSession();
 $result = $GLOBALS['DB']->query("SELECT * FROM uni1_users WHERE id='".$_SESSION['id']."'");
 foreach($result as $data){
 	$Username 	= $data['username'];

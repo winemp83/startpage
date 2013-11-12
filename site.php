@@ -39,6 +39,9 @@ switch ($page){
 	case 'insertPin':
 				 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/insert.pin.php';
 				 break;
+	case 'news' :
+			 	 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/page.news.php';
+				 break;
 	default 	:
 				 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/page.error.php';
 				 break;

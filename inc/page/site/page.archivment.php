@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['SEC']->checkSession();
 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/get.info.php';
 $adm = $GLOBALS['SEC']->checkAdm();
 $archiv = new \Info\Archivment;

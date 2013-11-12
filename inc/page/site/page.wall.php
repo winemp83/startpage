@@ -1,5 +1,5 @@
 <?php
-
+$GLOBALS['SEC']->checkSession();
 if(!isset($_POST['id'])){
 	$id = $_SESSION['id'];
 }

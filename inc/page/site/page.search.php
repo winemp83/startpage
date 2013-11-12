@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['SEC']->checkSession();
 require_once PROJECT_DOCUMENT_ROOT.'/inc/page/site/get.info.php';
 require_once PROJECT_DOCUMENT_ROOT.'/inc/class/search/class.search.php';
 $search = new System\search;

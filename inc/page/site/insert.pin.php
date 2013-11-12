@@ -1,4 +1,5 @@
 <?php
+$GLOBALS['SEC']->checkSession();
 $walls = new System\ownwall;
 if(isset($_POST['del'])){
 	$walls->delWall($_POST['delID']);

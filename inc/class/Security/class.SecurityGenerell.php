@@ -19,5 +19,16 @@ class Security{
 		(isset($_SESSION['adm']) && ($_SESSION['adm'] != 0 && $_SESSION['adm'] != 4)) ? $adm = true : $adm = false;
 		return $adm;
 	}
+	
+	public function checkSession(){
+		if($_SESSION['login'] > time()){
+			$_SESSION['login'] = time()+600;
+		}
+		else{
+			session_destroy();
+			header('Location: http://www.spaceoflegends.de/');
+			exit;
+		}
+	}
 }
 ?>
