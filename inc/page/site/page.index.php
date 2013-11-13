@@ -12,7 +12,8 @@ $adm = $GLOBALS['SEC']->checkAdm();
 $msg =  "Willkommen bei Space of Legends,<br/>".
 		"Leider befinden sich viele Funktionen noch im Aufbau.<br/>".
 		"Bitte gedulden Sie sich ein wenig!";
-		
+
+$GLOBALS['smarty']->assign('title', TITLE);
 $GLOBALS['smarty']->assign('adm', $adm);
 $GLOBALS['smarty']->assign('info', $info);
 $GLOBALS['smarty']->assign('content', $msg);

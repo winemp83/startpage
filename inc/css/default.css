@@ -1,142 +1,135 @@
-body{
-position: absolute;
-top: 0px;
-left: 0px;
-width: 100%;
-height: 100%;
-background: url('http://www.spaceoflegends.de/img/bkd_page.jpg') no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-color: gold;
-overflow: hidden;
+
+body {
+position : absolute;
+top : 0;
+left : 0;
+width : 100%;
+height : 100%;
+background : url('http://www.spaceoflegends.de/img/bkd_page.jpg') center center no-repeat fixed;
+background-size : cover;
+color : gold;
+overflow : hidden;
 }
-#wrapper{
-position: absolute;
-top: 0px;
-left: 0px;
-width: 100%;
-height: 100%;
+#wrapper {
+position : absolute;
+top : 0;
+left : 0;
+width : 100%;
+height : 100%;
 }
-#left_top{
-position: fixed;
-top: 5px;
-left: 5px;
-width: 180px;
-height: 180px;
-text-align: center;
-background: black;
-opacity: 0.75;
+#left_top {
+position : fixed;
+top : 5px;
+left : 5px;
+width : 180px;
+height : 180px;
+text-align : center;
+background : black;
+opacity : 0.75;
 }
-#lefttop{
-position: fixed;
-top: 5px;
-left: 5px;
-width: 180px;
-height: 360px;
-text-align: center;
-background: black;
-opacity: 0.75;
-text-align:left;
+#lefttop {
+position : fixed;
+top : 5px;
+left : 5px;
+width : 180px;
+height : 360px;
+text-align : center;
+background : black;
+opacity : 0.75;
+text-align : left;
 }
-#header{
- position: absolute;
- top: 10px;
- left: 300px;
- width: 60%;
- height: 60px;
- text-align: center;
+#header {
+position : absolute;
+top : 10px;
+left : 300px;
+width : 60%;
+height : 60px;
+text-align : center;
 }
-#menue{
-position: fixed;
-top: 190px;
-left: 5px;
-width: 180px;
-text-align: center;
-background: black;
-opacity: 0.75;
+#menue {
+position : fixed;
+top : 190px;
+left : 5px;
+width : 180px;
+text-align : center;
+background : black;
+opacity : 0.75;
 }
-#inmenu{
-position: fixed;
-bottom: 25px;
-left: 5px;
-width: 180px;
-text-align: center;
-background: black;
-opacity: 0.75;
+#inmenu {
+position : fixed;
+bottom : 25px;
+left : 5px;
+width : 180px;
+text-align : center;
+background : black;
+opacity : 0.75;
 }
-#content{
-position: absolute;
-background: black;
-opacity: 0.75;
-top: 100px;
-left: 300px;
-width: 60%;
-height: 60%;
-overflow: auto;
+#content {
+position : absolute;
+background : black;
+opacity : 0.75;
+top : 100px;
+left : 300px;
+width : 60%;
+height : 60%;
+overflow : auto;
 }
-a, a:visited{
-color: gold;
-text-decoration: none;
-width: 180px;
-height: 20px;
+a, a:visited {
+color : gold;
+text-decoration : none;
+width : 180px;
+height : 20px;
 }
-a:hover{
-color: red;
-text-decoration: none;
-width: 180px;
-height: 20px;
+a:hover {
+color : red;
+text-decoration : none;
+width : 180px;
+height : 20px;
 }
-#menue_button{
-background-image:url("http://www.spaceoflegends.de/img/bkd_bg.png");
-width: 180px;
-height: 20px;
-display: block;
+#menue_button {
+background-image : url("http://www.spaceoflegends.de/img/bkd_bg.png");
+width : 180px;
+height : 20px;
+display : block;
 }
 .ui-tooltip, .arrow:after {
-background: black;
-border: 2px solid white;
+background : black;
+border : white solid 2px;
 }
 .ui-tooltip {
-padding: 10px 20px;
-color: white;
-border-radius: 20px;
-font: bold 14px "Helvetica Neue", Sans-Serif;
-text-transform: uppercase;
-box-shadow: 0 0 7px black;
+padding : 10px 20px;
+color : white;
+border-radius : 20px;
+font : bold 14px "Helvetica Neue", Sans-Serif;
+text-transform : uppercase;
+box-shadow : 0 0 7px black;
 }
 .arrow {
-width: 70px;
-height: 16px;
-overflow: hidden;
-position: absolute;
-left: 50%;
-margin-left: -35px;
-bottom: -16px;
+width : 70px;
+height : 16px;
+overflow : hidden;
+position : absolute;
+left : 50%;
+margin-left : -35px;
+bottom : -16px;
 }
 .arrow.top {
-top: -16px;
-bottom: auto;
+top : -16px;
+bottom : auto;
 }
 .arrow.left {
-left: 20%;
+left : 20%;
 }
 .arrow:after {
-content: "";
-position: absolute;
-left: 20px;
-top: -20px;
-width: 25px;
-height: 25px;
-box-shadow: 6px 5px 9px -9px black;
--webkit-transform: rotate(45deg);
--moz-transform: rotate(45deg);
--ms-transform: rotate(45deg);
--o-transform: rotate(45deg);
-tranform: rotate(45deg);
+content : "";
+position : absolute;
+left : 20px;
+top : -20px;
+width : 25px;
+height : 25px;
+box-shadow : 6px 5px 9px -9px black;
 }
 .arrow.top:after {
-bottom: -20px;
-top: auto;
+bottom : -20px;
+top : auto;
 }

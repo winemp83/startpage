@@ -10,39 +10,42 @@
 <div id="wrapper">
 <div id="left_top">
 {block "Left"}
+	<form method="post" action="index.php">
 	<table style="text-align:center;width:180px;height:180px;">
 	<tr>
 		<td>Username :</td>
 	</tr>
 	<tr>
-	<form method="post">
-		<td><input type="text" name="user" size="15" max-size="30"></td>
+		<td>
+			<input type="text" name="user" size="15">
+		</td>
 	</tr>
 	<tr>
 		<td>Passwort :</td>
 	</tr>
 	<tr>
-		<td><input type="password" name="pass" size="15" max-size="30"></td> 
+		<td><input type="password" name="pass" size="15"></td> 
 	</tr>
 	<tr>
-		<td><input type="submit" name="Login" value="Login"></td>
-	</form>
+		<td>
+			<input type="submit" name="Login" value="Login">
+		</td>
+	</tr>
 	</table>
+	</form>
 {/block}
 </div>
 <div id="header">
 {block "Header"}
-<p>
-	<h3>Space of Legends<br />
+	<h3>Space of Legends<br>
 	Ein episches Weltall Abenteuer</h3>
-</p>
 {/block}
 </div>
 <div id="content">
 {block "Content"}
 <p>
 	Willkommen bei Space of Legends,<br />
-	Bitte gedulden Sie sich einwenig. Die Seite befindet sich noch im Aufbau!<br />
+	Bitte gedulden Sie sich einwenig. Die Seite befindet sich noch im Aufbau!<br>
 </p>
 {/block}
 </div>

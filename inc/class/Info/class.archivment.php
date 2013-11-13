@@ -12,23 +12,23 @@ class Archivment{
 			array_push($array_name, $data['what']);
 			array_push($array_time, $data['time']);
 		}
-		$erfolg = '<table width="100%" rules="all"><tr><th width="33%">LvL</th><th width="33%">Was</th><th>Zeitpunkt</th></tr>';
+		$erfolg = '<table width="100%" rules="all"><tr><th width="10%">LvL</th><th width="60%">Was</th><th>Zeitpunkt</th></tr>';
 		for($i = 0; $i < count($array_lvl); $i++){
 			if($i%2 != 0){
-				$erfolg .= '<tr><td>';
+				$erfolg .= '<tr><td style="text-align:center;">';
 				$erfolg .= $array_lvl[$i];
-				$erfolg .= '</td><td>';
+				$erfolg .= '</td><td style="text-align:center;">';
 				$erfolg .= $this->getArchivmentTitle($array_lvl[$i], $array_name[$i]);
-				$erfolg .= '</td><td>';
+				$erfolg .= '</td><td style="text-align:right;">';
 				$erfolg .= date("H:i:s d.m.Y", $array_time[$i]);
 				$erfolg .= '</td></tr>';
 			}
 			else{
-				$erfolg .= '<tr><td style="background:grey;">';
+				$erfolg .= '<tr><td style="background:grey;text-align:center;">';
 				$erfolg .= $array_lvl[$i];
-				$erfolg .= '</td><td style="background:grey;">';
+				$erfolg .= '</td><td style="background:grey;text-align:center;">';
 				$erfolg .= $this->getArchivmentTitle($array_lvl[$i], $array_name[$i]);
-				$erfolg .= '</td><td style="background:grey;">';
+				$erfolg .= '</td><td style="background:grey;text-align:right;">';
 				$erfolg .= date("H:i:s d.m.Y", $array_time[$i]);
 				$erfolg .= '</td></tr>';
 			} 
@@ -38,7 +38,8 @@ class Archivment{
 	}
 	
 	private function getArchivmentTitle($lvl, $archivment){
-		switch ($archivment){
+		
+		switch ($archivment){ 
 			case 'test'	:
 						if($lvl == 1){
 							return "Test Archivment I";
@@ -59,7 +60,7 @@ class Archivment{
 							return "Test Archivment VI";
 						}
 						break;
-			case 'archievments_mine'	:
+			case 'achievements_mine'	:
 						if($lvl == 1){
 							return "Die erste Produktion";
 						}
@@ -79,7 +80,7 @@ class Archivment{
 							return "HARDCORE Level";
 						}
 						break;
-			case 'archievments_research'	:
+			case 'achievements_research'	:
 						if($lvl == 1){
 							return "Anfänger-Wissenschaftler";
 						}
@@ -99,7 +100,7 @@ class Archivment{
 							return "HARDCORE Level";
 						}
 						break;
-			case 'archievments_battle'	:
+			case 'achievements_battle'	:
 						if($lvl == 1){
 							return "Neue-Weltordnung";
 						}
@@ -119,7 +120,7 @@ class Archivment{
 							return "HARDCORE Level";
 						}
 						break;
-			case 'archievments_ship'	:
+			case 'achievements_ship'	:
 						if($lvl == 1){
 							return "Schlachtschiff-Spezialist";
 						}
@@ -139,7 +140,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_defence'	:
+			case 'achievements_defence'	:
 						if($lvl == 1){
 							return "Gauss-Kanonen Spezialist";
 						}
@@ -159,7 +160,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_storage'	:
+			case 'achievements_storage'	:
 						if($lvl == 1){
 							return "Das erste Volle";
 						}
@@ -179,7 +180,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_moon'	:
+			case 'achievements_moon'	:
 						if($lvl == 1){
 							return "Camping auf dem Mond";
 						}
@@ -199,7 +200,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_colony'	:
+			case 'achievements_colony'	:
 						if($lvl == 1){
 							return "Grundkenntnisse Zivilisation";
 						}
@@ -219,7 +220,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_friend'	:
+			case 'achievements_friend'	:
 						if($lvl == 1){
 							return "Die Bruderschaft";
 						}
@@ -239,7 +240,7 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			case 'archievments_statpoints'	:
+			case 'achievements_statpoints'	:
 						if($lvl == 1){
 							return "Schlacht um Einhunderttausend";
 						}
@@ -259,7 +260,7 @@ class Archivment{
 							return "Schlacht um Milliarden";
 						}
 						break;
-			case 'archievments_destroy'	:
+			case 'achievements_destroy'	:
 						if($lvl == 1){
 							return "Scharfschütze";
 						}
@@ -279,7 +280,7 @@ class Archivment{
 							return "Ich bin der Inbegriff des Todes";
 						}
 						break;
-			case 'archievments_debris'	:
+			case 'achievements_debris'	:
 						if($lvl == 1){
 							return "Trümmer wiederverwerten";
 						}
@@ -299,7 +300,8 @@ class Archivment{
 							return "Reserve";
 						}
 						break;
-			default :	return "Benutzer Archivment";
+			default :	print_r($archivment);
+						return "Benutzer Archivment";
 						break;			
 			
 		}
